@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Amulmani Enterprises</title>
+  <meta name="description" content="Product details for Amulmani Enterprises – Multi-Colour Printed Solutions." />
+  <link rel="icon" type="image/png" href="https://amulmanienterprises.com/wp-content/uploads/2025/09/amulmani-logo-58x29.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .pd-hero { background: var(--dark); padding: 120px 0 60px; }
+    .pd-hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .pd-image { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, rgba(158,27,31,.18), rgba(158,27,31,.1)); box-shadow: 0 30px 80px -20px rgba(0,0,0,.6); }
+    .pd-image img { width: 100%; height: 100%; object-fit: cover; }
+    .pd-info h1 { font-size: 2.4rem; color: #fff; margin-bottom: 14px; }
+    .pd-category { display: inline-block; padding: 6px 16px; border-radius: 999px; background: rgba(158,27,31,.25); color: var(--cyan); font-size: .8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+    .pd-info p { color: #d4b3b3; font-size: 1.05rem; line-height: 1.7; margin-bottom: 28px; }
+    .pd-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 30px; }
+    .pd-spec { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 12px; }
+    .pd-spec-icon { width: 42px; height: 42px; border-radius: 12px; background: var(--grad); display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0; }
+    .pd-spec b { display: block; color: #fff; font-size: .92rem; }
+    .pd-spec small { color: #c9a8a8; font-size: .78rem; }
+    .pd-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+    .pd-badge { padding: 7px 18px; border-radius: 999px; font-size: .8rem; font-weight: 700; }
+    .pd-badge.cert { background: rgba(158,27,31,.18); color: var(--cyan); border: 1px solid rgba(158,27,31,.35); }
+    .pd-badge.spec { background: rgba(255,255,255,.08); color: #f6e8e8; border: 1px solid rgba(255,255,255,.12); }
+    .pd-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .pd-back { display: inline-flex; align-items: center; gap: 8px; color: #d4b3b3; font-size: .9rem; margin-bottom: 30px; transition: .3s; }
+    .pd-back:hover { color: var(--accent); }
+    .pd-loading { text-align: center; padding: 100px 0; color: #d4b3b3; font-size: 1.1rem; }
+    @media (max-width: 760px) {
+      .pd-hero-inner { grid-template-columns: 1fr; }
+      .pd-specs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark"><img src="https://amulmanienterprises.com/wp-content/uploads/2025/09/amulmani-logo-58x29.png" alt="Amulmani Enterprises logo" onerror="this.parentElement.textContent='A'"></span>
+      <span class="brand-text">AMULMANI<small>Multi-Colour Printed Solutions</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#products">Products</a>
+      <a href="/#machines">Machines</a>
+      <a href="/#industries">Industries</a>
+      <a href="/#blog">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-primary btn-sm" onclick="document.getElementById('quoteModal').classList.add('open');document.body.style.overflow='hidden'">Request Quote</button>
+      <a href="/admin.html" class="nav-admin">Admin</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- PRODUCT DETAIL -->
+<section class="pd-hero">
+  <div class="container" id="pdContent">
+    <div class="pd-loading">Loading product…</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand footer-brand"><span class="brand-mark"><img src="https://amulmanienterprises.com/wp-content/uploads/2025/09/amulmani-logo-58x29.png" alt="Amulmani Enterprises logo" onerror="this.parentElement.textContent='A'"></span><span class="brand-text">AMULMANI<small>Multi-Colour Printed Solutions</small></span></div>
+      <p>Established in 2016 in Tirupur, Tamil Nadu. OEKO-TEX® and FSC® certified printing and packaging.</p>
+    </div>
+    <div><h4>Company</h4><a href="/#about">About Us</a><a href="/#why">Why Choose Us</a><a href="/#machines">Manufacturing</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
+    <div><h4>Products</h4><a href="/#products">Wash Care Labels</a><a href="/#products">Hang Tags</a><a href="/#products">Photo Cards</a><a href="/#products">Stickers</a><a href="/#products">Packing Boxes</a></div>
+    <div><h4>Quick Links</h4><a href="/#machines">Machines</a><a href="/#industries">Industries</a><a href="/admin.html">Admin Login</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 Amulmani Enterprises. All Rights Reserved</div>
+</footer>
+
+<!-- QUOTE MODAL -->
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('quoteModal').classList.remove('open');document.body.style.overflow=''">✕</button>
+    <h3>Request a Quote</h3>
+    <p>Fill in your details and we'll get back within 24 hours.</p>
+    <form id="quoteForm" novalidate>
+      <input type="text" name="name" placeholder="Your Name *" required />
+      <input type="tel" name="mobile" placeholder="Mobile / WhatsApp *" required />
+      <input type="email" name="email" placeholder="Email Address" />
+      <select name="product" id="quoteProduct" required>
+        <option value="">Select product type *</option>
+        <option>Wash Care Labels</option><option>Hang Tags</option><option>Photo / Hanger Cards</option>
+        <option>Inner Cards</option><option>Stickers</option><option>Packing Boxes</option>
+        <option>Stationery</option><option>Multiple Items</option>
+      </select>
+      <textarea name="message" rows="3" placeholder="Requirements / Message"></textarea>
+      <button type="submit" class="btn btn-primary btn-block">Submit Quote Request →</button>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// Navbar
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+document.getElementById('hamburger').addEventListener('click', () => document.body.classList.toggle('nav-open'));
+
+// Load product
+const slug = new URLSearchParams(window.location.search).get('id');
+async function loadProduct() {
+  if (!slug) { document.getElementById('pdContent').innerHTML = '<div class="pd-loading">No product specified. <a href="/" style="color:var(--accent)">Go back →</a></div>'; return; }
+  try {
+    const res = await fetch('/api/products');
+    const { products } = await res.json();
+    const p = products.find(x => x.slug === slug);
+    if (!p) { document.getElementById('pdContent').innerHTML = '<div class="pd-loading">Product not found. <a href="/" style="color:var(--accent)">Go back →</a></div>'; return; }
+    document.title = p.name + ' — Amulmani Enterprises';
+    const specs = [
+      { icon: '🏷️', label: 'Category', value: p.category.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase()) },
+      { icon: '📐', label: 'Specifications', value: (p.specs || []).join(' · ') || 'Premium quality' },
+      { icon: '✅', label: 'Certifications', value: (p.badges || []).join(' · ') || 'Standard' },
+      { icon: '📦', label: 'Packaging', value: 'Bulk & custom packaging available' },
+    ];
+    document.getElementById('pdContent').innerHTML = `
+      <a href="/#products" class="pd-back">← Back to Products</a>
+      <div class="pd-hero-inner">
+        <div class="pd-image">${p.image_url ? `<img src="${p.image_url}" alt="${p.name}">` : `<div style="display:grid;place-items:center;height:100%;font-size:5rem;background:var(--grad)">${p.icon}</div>`}</div>
+        <div class="pd-info">
+          <span class="pd-category">${p.icon} ${p.category.replace('-', ' ')}</span>
+          <h1>${p.name}</h1>
+          <p>${p.description || ''}</p>
+          <div class="pd-specs">${specs.map(s => `
+            <div class="pd-spec">
+              <div class="pd-spec-icon">${s.icon}</div>
+              <div><b>${s.value}</b><small>${s.label}</small></div>
+            </div>`).join('')}
+          </div>
+          <div class="pd-badges">
+            ${(p.badges || []).map(b => `<span class="pd-badge cert">${b}</span>`).join('')}
+            ${(p.specs || []).map(s => `<span class="pd-badge spec">${s}</span>`).join('')}
+          </div>
+          <div class="pd-actions">
+            <button class="btn btn-primary" onclick="openQuoteFor('${p.name.replace(/'/g, "\\'")}')">📋 Request Quote →</button>
+            <a href="tel:9677718307" class="btn btn-ghost">📞 Call Now</a>
+          </div>
+        </div>
+      </div>`;
+  } catch { document.getElementById('pdContent').innerHTML = '<div class="pd-loading">Error loading product. <a href="/" style="color:var(--accent)">Go back →</a></div>'; }
+}
+function openQuoteFor(name) {
+  const modal = document.getElementById('quoteModal');
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const sel = document.getElementById('quoteProduct');
+  if (sel) [...sel.options].forEach(o => { if (o.text.includes(name.split(' ')[0])) sel.value = o.text; });
+}
+document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const body = Object.fromEntries(fd.entries());
+  if (!body.name || !body.mobile) { alert('Please fill name and mobile.'); return; }
+  try {
+    const res = await fetch('/api/enquiries', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...body, source: 'quote-modal' }) });
+    if (!res.ok) throw new Error('Failed');
+    alert('✅ Quote request submitted!');
+    e.target.reset();
+    document.getElementById('quoteModal').classList.remove('open');
+    document.body.style.overflow = '';
+  } catch { alert('❌ Something went wrong. Please try again.'); }
+});
+loadProduct();
+</script>
+</body>
+</html>

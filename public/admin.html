@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Amulmani Enterprises</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-screen" id="loginScreen">
+  <form class="login-card" id="loginForm">
+    <div class="brand-mark">A</div>
+    <h1>Admin Dashboard</h1>
+    <p>Amulmani Enterprises · Management Console</p>
+    <input type="text" id="loginUser" placeholder="Username" autocomplete="username" required />
+    <input type="password" id="loginPass" placeholder="Password" autocomplete="current-password" required />
+    <div class="login-error" id="loginError"></div>
+    <button class="btn-primary" type="submit">Login to Dashboard →</button>
+    <a class="back-link" href="/">← Back to Website</a>
+  </form>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dash hidden" id="dash">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">A</span><span>AMULMANI<small>Admin Panel</small></span></div>
+    <nav>
+      <button class="nav-item active" data-tab="overview">📊 Overview</button>
+      <button class="nav-item" data-tab="enquiries">📨 Enquiries <span class="pill" id="newCount">0</span></button>
+      <button class="nav-item" data-tab="products">📦 Products</button>
+      <button class="nav-item" data-tab="blog">📝 Blog</button>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="/" class="nav-item">🌐 View Website</a>
+      <button class="nav-item logout" id="logoutBtn">🚪 Logout</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="main-head">
+      <h2 id="pageTitle">Overview</h2>
+      <span class="user-chip">👤 <b id="userName">admin</b></span>
+    </header>
+
+    <!-- Overview -->
+    <section class="tab-panel active" id="tab-overview">
+      <div class="stats-grid">
+        <div class="stat-card"><span>📨</span><b id="stEnq">–</b><small>Total Enquiries</small></div>
+        <div class="stat-card hot"><span>🔔</span><b id="stNew">–</b><small>New Enquiries</small></div>
+        <div class="stat-card"><span>📦</span><b id="stProd">–</b><small>Products</small></div>
+        <div class="stat-card"><span>📝</span><b id="stBlog">–</b><small>Blog Posts</small></div>
+      </div>
+      <div class="panel"><h3>Latest Enquiries</h3><div id="recentEnq" class="table-wrap"></div></div>
+    </section>
+
+    <!-- Enquiries -->
+    <section class="tab-panel" id="tab-enquiries">
+      <div class="panel"><h3>All Enquiries</h3><div id="enqTable" class="table-wrap"></div></div>
+    </section>
+
+    <!-- Products -->
+    <section class="tab-panel" id="tab-products">
+      <div class="panel">
+        <div class="panel-head"><h3>Products</h3><button class="btn-primary btn-sm" id="addProductBtn">＋ Add Product</button></div>
+        <div id="prodTable" class="table-wrap"></div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="tab-panel" id="tab-blog">
+      <div class="panel">
+        <div class="panel-head"><h3>Blog Posts</h3><button class="btn-primary btn-sm" id="addPostBtn">＋ New Post</button></div>
+        <div id="blogTable" class="table-wrap"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Generic create/edit modal -->
+<div class="modal-overlay" id="adminModal">
+  <div class="modal">
+    <button class="modal-close" id="adminModalClose">✕</button>
+    <h3 id="adminModalTitle">Add</h3>
+    <form id="adminModalForm"></form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/js/admin.js"></script>
+</body>
+</html>
